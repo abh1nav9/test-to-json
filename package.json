@@ -1,6 +1,6 @@
 {
   "name": "text-to-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auto-parse any plaintext (JSON, YAML, INI, key:value, Markdown) into JS/TS objects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
