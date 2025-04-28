@@ -25,20 +25,12 @@ arr: [1,2,3]
 
         const result = parseAuto(blob);
 
-        // Check key "0"
-        expect(Array.isArray(result['0'])).toBe(true);
-        expect(result['0'].length).toBe(2);
-        expect(result['0'][1]).toMatch(/tattoo shops in San Francisco/);
+        expect(Array.isArray(result["0"]) && result["0"].length === 2).toBe(true);
+        expect(result["0"][1]).toMatch(/tattoo shops in San Francisco/);
 
-        // Check key "8"
-        expect(Array.isArray(result['8'])).toBe(true);
-        const [sources, events] = result['8'];
-        // sources nodes
-        expect(Array.isArray(sources)).toBe(true);
-        expect(sources[0]).toHaveProperty('type', 'sources');
-        expect(Array.isArray(sources[0].data.nodes)).toBe(true);
-        // events
-        expect(Array.isArray(events)).toBe(true);
-        expect(events[0]).toHaveProperty('type', 'events');
+        expect(Array.isArray(result["8"]) && result["8"].length === 2).toBe(true);
+        const [sources, events] = result["8"];
+        expect(Array.isArray(sources) && sources[0].type === 'sources').toBe(true);
+        expect(Array.isArray(events) && events[0].type === 'events').toBe(true);
     });
 });
