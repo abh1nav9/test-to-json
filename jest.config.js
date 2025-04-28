@@ -1,20 +1,17 @@
 // jest.config.js
 module.exports = {
-  preset: "ts-jest",
-  testEnvironment: "node",
+  preset: 'ts-jest',
+  testEnvironment: 'node',
 
-  // Transform your TS & JS files via ts-jest
   transform: {
-    "^.+\\.[tj]sx?$": "ts-jest",
+    '^.+\\.[tj]sx?$': 'ts-jest',
   },
 
-  // Whitelist unified and its ESM deps so Jest will transform them too
   transformIgnorePatterns: [
-    "/node_modules/(?!(unified|remark-parse|unist|bail|is-plain-obj)/)",
+    '/node_modules/(?!(unified|remark-parse|unist|bail|is-plain-obj|trough)/)'
   ],
 
-  // Match any .test.ts or .spec.ts file
-  testRegex: "\\.(test|spec)\\.tsx?$",
+  testMatch: ['**/tests/**/*.test.ts'],
 
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 };
